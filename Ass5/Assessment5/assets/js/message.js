@@ -1,7 +1,7 @@
 // message.js
 
 // 定义API的URL基础路径
-const apiUrl = "http://localhost:9000";
+const apiUrl = "http://129.204.76.75:9000";
 
 /**
  * 从服务器获取消息并显示在页面上

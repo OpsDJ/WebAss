@@ -1,7 +1,7 @@
 /**
  * 定义API的URL基础路径。
  */
-const apiUrl = "http://localhost:9000";
+const apiUrl = "http://129.204.76.75:9000";
 
 /**
  * 检查用户登录状态。
