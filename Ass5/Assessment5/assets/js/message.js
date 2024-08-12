@@ -83,7 +83,7 @@ function postMessage() {
   if (username) {
     console.log("postMessage function called"); // 添加日志
     console.log(`Sending message: ${message}`); // 添加调试信息
-    fetch(`${apiUrl}/post`, {
+    fetch(`${apiUrl}/messages`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

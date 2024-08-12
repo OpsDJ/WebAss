@@ -6,7 +6,7 @@ const path = require('path');
 const messagesFile = path.join(__dirname, '../public/data/messages.json');
 
 // 发布消息
-router.post("/post", (req, res) => {
+router.post("/", (req, res) => {
   const { username, message } = req.body;
   const messages = JSON.parse(fs.readFileSync(messagesFile));
   messages.push({

@@ -81,19 +81,33 @@ async function fetchTodos(userID) {
 async function addTodo() {
   const content = document.getElementById("todoText").value;
   const userID = localStorage.getItem("userID");
-  if (content && userID) {
-    await fetch(`${apiUrl}/todos`, {
+  if (!content) {
+    alert("请输入待办事项内容");
+    return;
+  }
+
+  try {
+    const response = await fetch(`${apiUrl}/todos`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ userID, content }),
     });
-    fetchTodos(userID); // 添加代办事项后重新加载代办事项
-  } else {
-    alert("请输入待办事项内容");
+
+    if (!response.ok) {
+      throw new Error(`Failed to add todo: ${response.statusText}`);
+    }
+
+    const data = await response.text();
+    alert(data);
+    fetchTodos(userID); // 添加待办事项后重新加载待办事项
+  } catch (error) {
+    console.error(error);
+    alert("添加待办事项失败，请稍后再试！");
   }
 }
+
 
 /**
  * 删除待办事项。
