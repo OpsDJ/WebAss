@@ -1,0 +1,135 @@
+body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #000 url('./moon.jpg') no-repeat;
+    color: #555;
+}
+
+a {
+    color: #B23C1C;
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+#page {
+    width: 1000px;
+    margin: 0px auto;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#title h1 {
+    color: #B23C1C;
+    font-weight: 200;
+    font-size: 3em;
+}
+
+#title h3 {
+    color: #666;
+    font-style: italic;
+    font-weight: lighter;
+    margin-top: -30px;
+}
+
+#nav {
+    display: flex;
+}
+
+#nav a {
+    color: white;
+    text-decoration: none;
+    padding: 100px 15px 20px 15px;
+    display: inline-block;
+}
+
+#nav a.active, #nav a:hover {
+    background: #A00;
+}
+
+#content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+#main {
+    width: 700px;
+}
+
+#main .post {
+    border-bottom: 1px solid #111;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+}
+
+#main .post h1 {
+    color: #B23C1C;
+    font-weight: 100;
+}
+
+#main .post h5 {
+    display: flex;
+    justify-content: space-between;
+}
+
+#main .post p {
+    font-size: .8em;
+    line-height: 1.6em;
+    font-weight: 300;
+    text-align: justify;
+}
+
+#main .buttons {
+    margin-top: 30px;
+}
+
+#main .buttons span {
+    color: #aaa;
+    font-size: 0.8em;
+    margin: 0 10px;
+}
+
+#sidebar {
+    width: 250px;
+}
+
+#sidebar > ul {
+    margin-top: 3em;
+}
+
+#sidebar h2 {
+    color: #B23C1C;
+    font-weight: 200;
+    font-size: 1.4em;
+}
+
+#sidebar p {
+    font-size: .8em;
+    line-height: 1.6em;
+}
+
+#sidebar li li {
+    border-bottom: 1px solid #111;
+    padding: 12px;
+}
+
+#sidebar a {
+    color: #555;
+    font-size: .8em;
+}
+#sidebar a:hover {
+    color: #B23C1C;
+    text-decoration: underline;
+}

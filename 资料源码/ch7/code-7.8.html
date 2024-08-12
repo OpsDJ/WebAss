@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>7.8</title>
+</head>
+<body>
+  <div>
+      <p>
+          Click the <a href="#">Link</a>.
+      </p>
+  </div>
+  <script>
+    const div = document.querySelector('div')
+    const p = document.querySelector('p')
+    const a = document.querySelector('a')
+
+    // 为事件传播路径上的每一个节点注册click事件处理函数
+    // 在Chrome开发者工具的Console面板查看效果
+    window.addEventListener('click', function(e) { console.log('window') })
+    document.addEventListener('click', function(e) { console.log('document') })
+    div.addEventListener('click', function(e) { console.log('div') })
+    p.addEventListener('click', function(e) { console.log('p') })
+    a.addEventListener('click', function(e) { console.log('a') })
+</script>
+</body>
+</html>

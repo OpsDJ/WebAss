@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>12.3 - SSE</title>
+  </head>
+  <body>
+    <script>
+      if (EventSource) {
+        // 创建EventSource对象
+        const source = new EventSource('/sse')
+
+        // 成功建立连接时触发
+        source.onopen = function () {}
+
+        // 收到消息时触发
+        source.onmessage = function (evt) {
+          // 服务器返回的数据在event.data属性中
+          const data = evt.data
+          // 处理服务端回应数据...
+          console.log(data)
+        }
+
+        // 连接异常时触发
+        source.onerror = function () {}
+
+        // 调用source.close()方法则断开连接
+      }
+    </script>
+  </body>
+</html>

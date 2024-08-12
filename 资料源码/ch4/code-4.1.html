@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>code-4.1</title>
+    <style>
+        div { margin: 1em 0; }
+        button, span { border: none; background-color: brown; color: white; }
+        span { width: 30px; line-height: 30px; text-align: center; display: inline-block; }
+    </style>
+</head>
+<body>
+    <!-- 四个角相同值 -->
+    <div>
+        <button style="border-radius: 5px;">Save</button>
+        <button style="border-radius: 1em;">Save</button>
+        <button style="border-radius: 1em/2em;">Save</button>
+        <span style="border-radius: 50%;">B</span>
+    </div>
+    
+    <!-- 四个角不同值，左上、右上、右下、左下顺序，兼顾对称性  -->
+    <div>
+        <span style="border-radius: 50% 0;">B</span>
+        <button style="border-radius: 1em 2em 3em;">Save</button>
+        <button style="border-radius: 5px 5px 0 0;">Save</button>
+    </div>
+    
+    <!-- 以下两种写法等价 -->
+    <div>
+        <span style="border-radius: 5px 10px 20px / 1em 2em">B</span>
+        <span style="border-top-left-radius: 5px 1em;
+                    border-top-right-radius: 10px 2em;
+                    border-bottom-right-radius: 20px 1em;
+                    border-bottom-left-radius: 10px 2em;
+        ">B</span>
+    </div>
+</body>
+</html>

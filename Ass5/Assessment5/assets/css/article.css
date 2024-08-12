@@ -1,0 +1,258 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+
+#navbar h1 {
+    margin: 0;
+}
+
+#navbar #statusIndicator {
+    display: flex;
+    align-items: center;
+}
+
+#navbar #statusIndicator span {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+#navbar button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#navbar button:hover {
+    background-color: #c82333;
+}
+
+#container {
+    display: flex;
+    margin-top: 20px;
+}
+
+#sidebar {
+    width: 20%;
+    padding: 20px;
+    /* background-color: #333; */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sidebar h2,
+#sidebar input,
+#sidebar button {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#sidebar button {
+    background-color: #28a745;
+    width: auto;
+    height: auto;
+}
+
+#sidebar button:hover {
+    background-color: #218838;
+}
+
+#content {
+    width: 80%;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+textarea {
+    height: 200px;
+    resize: none;
+}
+
+#articleForm,
+#articleList {
+    margin: 20px auto;
+    padding: 0px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#articleText {
+    width: 100%;
+    padding: 0px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+}
+
+.buttonContainer {
+    text-align: center;
+}
+
+.postButton {
+    display: inline-block;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+}
+
+
+
+button:hover {
+    background-color: #218838;
+}
+
+#article {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.article:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.article:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.article-details {
+    flex-grow: 1;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+    }
+
+    #sidebar {
+        width: 100%;
+    }
+
+    #content {
+        width: 100%;
+    }
+}
+
+input {
+    padding: 10px;
+    /* 内边距 */
+    border: 1px solid #ccc;
+    /* 边框 */
+    border-radius: 5px;
+    /* 圆角 */
+    font-size: 16px;
+    /* 字体大小 */
+    width: 300px;
+    /* 宽度 */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    /* 阴影效果 */
+}
+
+/* 悬停时的样式 */
+input:hover {
+    border-color: #aaa;
+}
+
+/* 获得焦点时的样式 */
+input:focus {
+    outline: none;
+    /* 移除默认的蓝色轮廓 */
+    border-color: #66afe9;
+    /* 获得焦点时的边框颜色 */
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.6);
+    /* 获得焦点时的阴影效果 */
+}
+
+#title h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: white;
+}
+
+#nav {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav li {
+    margin-right: 20px;
+}
+
+#nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+#nav a.active {
+    background-color: green;
+    border-radius: 5px;
+    font-weight: bold;
+}
+#nav a:hover {
+    border-radius: 5px;
+    font-weight: bold;
+}

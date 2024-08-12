@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Code-17.3</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <script defer src="./renderer.js"></script>
+  </head>
+  <body>
+    <!-- 显示主进程发来的当前时间 -->
+    <h3>Time: <span id="time"></span></h3>
+    
+    <form>
+      Your Name: <input id="inputUserName" type="text" />
+      <button id="btnCommit" type="button">Commit</button>
+      <!-- 显示主进程发来的回应 -->
+      <h3 id="echo"></h3>
+    </form>
+  </body>
+</html>

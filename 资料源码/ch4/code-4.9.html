@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>code-4.9</title>
+  <style>
+    .ball {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #ccc;
+      border-radius: 50%;
+      opacity: 0.2;
+      /* 引用@keyframes定义的动画关键帧，“move”为@keyframes规则名称 */
+      animation: move 2s ease-in-out alternate infinite both;
+    }
+    .b1 { 
+      animation-delay: 0ms;
+    }
+    .b2 {
+      animation-delay: 200ms;
+    }
+    .b3 {
+      animation-delay: 400ms;
+    }
+    .b4 {
+      animation-delay: 600ms;
+    }
+    /* 定义动画的关键帧规则 */
+    @keyframes move {
+      0%   { left: 0px;   }   /* "0%"也可写作"from" */
+      50%  { opacity: 1;  }
+      100% { left: 200px; }   /* "100%"也可写作"to" */
+    }
+  </style>
+</head>
+<body>
+    <div class="ball b1"></div>
+    <div class="ball b2"></div>
+    <div class="ball b3"></div>
+    <div class="ball b4"></div>
+</body>
+</html>

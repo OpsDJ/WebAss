@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple App</title>
+</head>
+<body>
+    <div id="status">
+    <!--登录状态显示，当登录的时候，这里的圈会从红变绿，并且下面会显示用户名-->
+    <div id="statusCircle" 
+        style="width: 20px; height: 20px; border-radius: 50%; background-color: red; margin-top: 10px;"></div>
+    </div>
+
+    <h2>Register</h2>
+    <input type="text" id="regUsername" placeholder="Username">
+    <input type="password" id="regPassword" placeholder="Password">
+    <button onclick="register()">Register</button>
+
+    <h2>Login</h2>
+    <input type="text" id="logUsername" placeholder="Username">
+    <input type="password" id="logPassword" placeholder="Password">
+    <button onclick="login()">Login</button>
+
+    <button onclick="logout()">Logout</button>
+
+    <h2>Post a Message</h2>
+    <textarea id="messageText" placeholder="Your message"></textarea>
+    <button onclick="postMessage()">Post Message</button>
+
+    <h2>Messages</h2>
+    <div id="messages"></div>
+
+    <script>
+      // 定义后端访问地址
+      const apiUrl = 'http://localhost:9000';
+
+      // 注册模块
+      function register() {
+          // 获取用户密码
+          const username = document.getElementById('regUsername').value;
+          const password = document.getElementById('regPassword').value;
+          // 向 http://localhost:9000/register 发送 请求，这个请求（request）的构成：
+          // 使用方法：Post
+          // 头设置：内容格式
+          // 主体：使用 JSON模块 让 username和password 从字符串转为 json
+          fetch(`${apiUrl}/register`, {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ username, password })
+          })
+          // 在这里，你的请求得到了回应，有了 回复（response），以下是依次处理 回复
+          // 这里就是 回调函数，这样写，就不会出现 回复还没到，但程序已经往后处理的问题了
+          // 获取回复的文本
+          .then(response => response.text())
+          // 对刚刚获取的文本，在此为 data，进行操作
+          .then(data => {
+              if (data === 'User already exists') {
+                  alert(username + '已存在，请使用其他用户名');
+              } else {
+                  alert(data);
+              }
+          });
+      }
+
+      function login() {
+          // 获取信息
+          const username = document.getElementById('logUsername').value;
+          const password = document.getElementById('logPassword').value;
+          // 我们通过本地存储 用户名信息
+          const loginned = localStorage.getItem('username');
+          // 如果用户名信息存在，则已登录，跳到后面，否则进行登录操作
+          if (!loginned){
+          // 同上
+          fetch(`${apiUrl}/login`, {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ username, password })
+          })
+          // 处理 回复，下面的 response.ok,即返回没有更改状态码，即有你登录成功，获取数据
+          // 若获取数据出错，抛出错误，后端有问题
+          .then(response => {
+              if (response.ok) {
+                  return response.json();
+              } else {
+                  throw new Error('Invalid credentials. Please try again.');
+              }
+          })
+          // 然后处理数据，改变登录状态的圈，并添加用户名在界面上
+          .then(data => {
+              alert(`${data.message}, ${data.username}`);
+              document.getElementById('statusCircle').style.backgroundColor = 'green';  // 登录成功，状态圈变绿
+              localStorage.setItem('username', username);  // 保存用户名到本地存储
+              const usernameContainer = document.getElementById('status')
+              const usernameElement= document.createElement('span');
+              usernameElement.id = 'status_username'
+              usernameElement.textContent = username;
+              usernameContainer.appendChild(usernameElement);
+              fetchMessages();  // 登录成功后加载消息
+          })
+          .catch(error => {
+              alert(error.message);
+              document.getElementById('statusCircle').style.backgroundColor = 'red';  // 登录失败，状态圈保持红色
+          });
+          }
+          else {
+            alert('你已经登录了');
+          }
+      }
+      // 后面不再重复，情况类似
+
+      function logout() {
+          localStorage.removeItem('username');  // 移除本地存储中的用户名
+          document.getElementById('statusCircle').style.backgroundColor = 'red';  // 登出时状态圈变红
+          document.getElementById('status_username').remove();
+          removeAllChildNodes(document.getElementById('messages'));
+          alert('成功登出');
+      }
+
+      function removeAllChildNodes(parent) {
+          while (parent.firstChild) {
+              parent.removeChild(parent.firstChild);
+          }
+      }
+
+      function postMessage() {
+          const message = document.getElementById('messageText').value;
+          const username = localStorage.getItem('username');  // 从本地存储获取用户名
+          if (username){
+            fetch(`${apiUrl}/post`, {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ username, message })
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+                fetchMessages();  // 发布消息后重新加载消息
+            });
+          }
+          else {
+            alert('你还未登录')
+          }
+      }
+
+      // 加载 专用模块
+      function fetchMessages() {
+          fetch(`${apiUrl}/messages`)
+            .then(response => response.json())
+            .then(messages => {
+                const messagesContainer = document.getElementById('messages');
+                messagesContainer.innerHTML = '';  // 清空当前消息
+                messages.forEach(msg => {
+                    const messageElement = document.createElement('div');
+                    messageElement.textContent = `${msg.username} (${msg.timestamp}): ${msg.message}`;
+                    messagesContainer.appendChild(messageElement);
+                });
+            });
+      }
+
+      function checkLoginStatus() {
+          const username = localStorage.getItem('username');
+          if (username) {
+              const usernameContainer = document.getElementById('status')
+              document.getElementById('statusCircle').style.backgroundColor = 'green'; // 用户已登录，状态圈变绿
+              const usernameElement= document.createElement('span');
+              usernameElement.id = 'status_username'
+              usernameElement.textContent = username;
+              usernameContainer.appendChild(usernameElement);
+              fetchMessages();
+          } else {
+              document.getElementById('statusCircle').style.backgroundColor = 'red';  // 用户未登录，状态圈保持红色
+          }
+      }
+
+      // 页面加载时检查登录状态
+      window.onload = checkLoginStatus;
+    </script>
+</body>
+</html>

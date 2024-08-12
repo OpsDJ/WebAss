@@ -1,0 +1,26 @@
+// 定义变量
+$base-color: #c6538c;
+$border-dark: rgba($base-color, 0.88);
+$bg-color: #eee;
+
+#card {
+  font-size: 14px;
+  margin: 50px;
+  padding: .5em 2em;
+  width: 400px;
+  background-color: $bg-color;
+  border: 1px solid $border-dark;
+  border-radius: .5em;
+  
+  h1 {
+    color: $base-color;
+  }
+  p {
+    color: #666;
+    line-height: 1.5em;
+    // "&" 引用父选择器
+    &:hover {
+      color: $base-color;
+    }
+  }
+}

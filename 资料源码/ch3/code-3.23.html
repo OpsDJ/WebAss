@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>code-3.23</title>
+    <style>
+      .container {
+        border: 1px dotted black;
+        display: flex;
+        margin: 10px 0;
+      }
+      .container > div {
+        border: 1px solid grey;
+        background-color: #ccc;
+        color: #888;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="width: 400px">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+    <div class="container" style="width: 400px">
+      <div style="flex-grow: 1">1</div>
+      <div style="flex-grow: 2">2</div>
+      <div style="flex-grow: 3">3</div>
+    </div>
+    <div class="container" style="width: 200px">
+      <div style="flex-shrink: 1">1</div>
+      <div style="flex-shrink: 2">2</div>
+      <div style="flex-shrink: 3">3</div>
+    </div>
+  </body>
+</html>

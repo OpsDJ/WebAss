@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Moonlight</title>
+  <style>
+    body {
+      margin: 0px;
+    }
+    #page {
+      /* 限定正文区为1000px，以保证在最低1024*768分辨率显示器下页面不出现水平滚动 */
+      width: 1000px;
+      /* 当元素宽度确定时，设置左右margin为auto可使元素水平居中*/
+      margin: 0px auto;  
+    }
+    #header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    #nav {
+      margin: 0px;
+      padding: 0px;
+    }
+    #content {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+    #main {
+    	width: 700px;
+    }
+    #sidebar {
+      width: 250px;
+    }
+    /* 以下代码只为展示各版块的边界和嵌套情况，实际编码时应删除 */
+    div, ul {
+      border: 1px solid black;
+      min-height: 50px;
+      min-width: 200px;
+    }
+  </style>
+</head>
+<body>
+    <div id="page">
+        <div id="header">
+            <div id="title"></div>
+            <ul id="nav"></ul> 
+        </div>
+        <div id="content">
+            <div id="main"></div>
+            <div id="sidebar"></div>
+        </div>
+    </div>
+</body>
+</html>

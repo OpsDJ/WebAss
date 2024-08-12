@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Portal</title>
+  <link rel="stylesheet" href="/assets/css/article.css">
+
+</head>
+
+<body>
+  <div id="header-container"></div>
+
+
+  <div id="container">
+    <div id="sidebar">
+      <h2>Search Articles</h2>
+      <input type="text" id="searchInput" placeholder="Enter Article Title">
+      <button onclick="searchArticle()">Search</button>
+    </div>
+
+    <div id="content">
+      <div id="articleList">
+        <h2>Articles</h2>
+        <div id="article"></div>
+      </div>
+
+      <div id="articleForm">
+        <h2>Post an Article</h2>
+        <input type="text" id="title" placeholder="Article Title">
+        <textarea id="articleText" placeholder="Your article"></textarea>
+        <div class="buttonContainer">
+          <button class="postButton" onclick="postArticle()">Post Article</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/js/article.js"></script>
+  <script src="../../assets/js/footer.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>code-2.2</title>
+  </head>
+  <body>
+    <form id="form-user">
+      <fieldset>
+        <legend>基本信息</legend>
+
+        <label for="name">姓名</label>
+        <input id="name" name="name" minlength="2" max="10" autofocus />
+        <br />
+
+        <label>性别</label>
+        <input type="radio" id="male" name="gender" value="male" checked />
+        <label for="male">男</label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">女</label>
+        <br />
+
+        <label for="age">年龄</label>
+        <input type="number" id="age" min="18" max="30" name="age" value="18" />
+        <br />
+
+        <label for="cellphone">手机号</label>
+        <input type="tel" id="cellphone" name="cellphone" />
+        <br />
+
+        <label for="avatar">头像</label>
+        <input type="file" id="avatar" name="avatar" />
+        <br />
+
+        <label for="city">所在城市</label>
+        <select id="city" name="city">
+          <option value="Beijing">北京市</option>
+          <option value="ShangHai">上海市</option>
+          <optgroup label="广东省">
+            <option value="GuangZhou">广州市</option>
+            <option value="ShenZhen">深圳市</option>
+          </optgroup>
+        </select>
+        <br />
+
+        <label for="myBrowser">爱用的浏览器</label>
+        <input id="myBrowser" name="myBrowser" list="browsers" />
+        <datalist id="browsers">
+          <option value="Chrome"></option>
+          <option value="Firefox"></option>
+          <option value="Internet Explorer"></option>
+          <option value="Opera"></option>
+          <option value="Safari"></option>
+          <option value="Microsoft Edge"></option>
+        </datalist>
+      </fieldset>
+
+      <fieldset>
+        <legend>喜爱的音乐风格</legend>
+
+        <input type="checkbox" id="blues" name="music" value="blues" />
+        <label for="blues">蓝调</label>
+
+        <input type="checkbox" id="jazz" name="music" value="jazz" />
+        <label for="jazz">爵士</label>
+
+        <input type="checkbox" id="country" name="music" value="country" />
+        <label for="country">乡村</label>
+
+        <input type="checkbox" id="hip-hop" name="music" value="hip-hop" />
+        <label for="hip-hop">嘻哈</label>
+
+        <input type="checkbox" id="rock" name="music" value="rock" />
+        <label for="rock">摇滚</label>
+      </fieldset>
+
+      <label for="intro">自我介绍</label>
+      <br />
+      <textarea id="intro" name="intro"></textarea>
+    </form>
+    <br />
+    <button type="submit" form="form-user">提交</button>
+    <button type="reset" form="form-user">重置</button>
+  </body>
+</html>

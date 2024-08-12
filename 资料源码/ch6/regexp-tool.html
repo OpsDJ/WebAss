@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regexp-tool</title>
+    <style>
+      form { display: flex; flex-direction: column; font-family: Courier;}
+      label {margin-top: 1em; user-select: none; color: #9E9E9E;}
+      input[type="text"],textarea { padding: .5em; margin: .2em 0; font-size: 20px;}
+      #result { 
+        background-color: #eee; border-radius: 5px; padding: .5em; 
+        color: #E81E62; min-height: 1em;
+      }
+    </style>
+</head>
+<body>
+  <form>
+    <label for="reg">RegExp:</label> 
+    <input id="reg" name="reg" type="text">
+    <div>
+      <input id="g" name="flags" value="g" type="checkbox" checked readonly>
+      <label for="g">g (global search)</label>
+      <input id="i" name="flags" value="i" type="checkbox">
+      <label for="i">i (case-insensitive)</label>
+    </div>
+    <label for="str">String:</label>
+    <textarea id="str" name="str" type="text"></textarea>
+    <label for="result">Result: <span id="count">0</span></label>
+    <p id="result"></p>
+  </form>
+  <script>
+    const form = document.querySelector('form')
+    const result = document.getElementById('result')
+    const count = document.getElementById('count')
+
+    // 为每一个带有name属性的表单元素注册input事件监听
+    // 当输入有变化时触发match()函数
+    document.querySelectorAll('[name]').forEach(f => f.oninput = match)
+
+    // 匹配正则表达式并输出结果
+    function match() {
+      const fields = getFields()        // 获取表单中各字段的值
+      const matched = doMatch(fields)   // 执行匹配
+      output(matched)                   // 输出结果
+    }
+
+    // 获取表单中各字段的值
+    function getFields() {
+      // 获取表单数据
+      const formData = new FormData(form)
+      // 转化为对象格式
+      const fields = Object.fromEntries(formData.entries())
+      // 获取匹配标志
+      fields.flags = formData.getAll('flags').join('')
+      return fields
+    }
+    
+    // 执行匹配
+    function doMatch(fields) {
+      const {reg, str, flags} = fields
+      try {
+        // 若输入的正则表达式不为空则执行匹配, 否则返回null
+        // 若要使用 matchAll() 方法可替换为如下语句
+        // return reg ? [...str.matchAll(new RegExp(reg, flags))] : null
+        return reg ? str.match(new RegExp(reg, flags)) : null
+      } catch {}
+    }
+
+    // 输出匹配结果
+    function output(matched) {
+      // 将每项匹配结果加引号, 连接成字符串后输出
+      result.innerText = matched?.map(i => `'${i}'`).join(' ') || ''
+      // 更新匹配项计数值
+      count.innerText = matched?.length || 0
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar {
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar h1 {
+        margin: 0;
+    }
+
+    .links {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .links a {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 18px;
+        color: #333;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #f0f0f0;
+        transition: background-color 0.3s ease;
+    }
+
+    .links a:hover {
+        background-color: #ccc;
+    }
+
+    #loginStatus {
+        display: flex;
+        align-items: center;
+    }
+
+    #welcomeMessage {
+        margin-right: 10px;
+    }
+
+    #loginButton {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #loginButton:hover {
+        background-color: #c82333;
+    }
+</style>
+
+<body>
+    <div class="navbar">
+        <h1>Navigation</h1>
+        <div id="loginStatus">
+            <span id="welcomeMessage">Welcome, Guest</span>
+            <button id="loginButton" onclick="redirectToLogin()">Login</button>
+        </div>
+    </div>
+
+    <div class="links">
+        <a href="./messages.html">Go to Messages</a><br>
+        <a href="./todo.html">Go to Todo</a><br>
+        <a href="./article.html">Go to Article</a>
+    </div>
+
+    <script>
+        // 在这里设置登录状态和欢迎信息
+        const username = localStorage.getItem('username');
+
+        if (username) {
+            document.getElementById('welcomeMessage').textContent = `Welcome, ${username}`;
+            document.getElementById('loginButton').textContent = 'Logout';
+            document.getElementById('loginButton').onclick = redirectToLogout;
+        }
+
+        function redirectToLogin() {
+            window.location.href = './login_or_register.html'; // 跳转到登录页面
+        }
+
+        function redirectToLogout() {
+            localStorage.removeItem('username'); // 移除登录信息
+            window.location.reload(); // 重新加载页面，触发登录状态更新
+        }
+
+    </script>
+    <script src="../js/footer.js"></script>
+
+</body>
+
+</html>

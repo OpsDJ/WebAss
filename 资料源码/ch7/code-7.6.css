@@ -1,0 +1,22 @@
+/* 桌面 */
+#desk {
+  border: 1px solid grey;
+  width: 500px; height: 200px;
+  position: relative;
+}
+/* 小球, 注意定位方式 */
+#ball {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background-image: linear-gradient(pink, red);
+  position: absolute;
+}
+/* 小球滚动动画样式类 */
+#ball.scrolling {
+  animation: scrolling 1s linear infinite;
+}
+/* 滚动动画关键帧 */
+@keyframes scrolling {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

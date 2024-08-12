@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8.2</title>
+    <!-- 样式表与7.2.3节的示例相同 -->
+    <link rel="stylesheet" href="./code-8.2.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.33/vue.global.min.js"></script>
+    <script defer src="./code-8.2.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div id="desk">
+      <!-- 循环渲染所有小球 -->
+      <div v-for="ball in balls" 
+          class="ball"
+          :style="{left: ball.x + 'px', top: ball.y + 'px'}"
+      ></div>
+    </div>
+    <button @click="start()">Start</button>
+    <button @click="pause()">Pause</button>
+  </div>
+</body>
+</html>

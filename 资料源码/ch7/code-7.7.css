@@ -1,0 +1,13 @@
+/* 桌面 */
+#desk {
+  border: 1px solid grey;
+  width: 500px; height: 200px;
+  position: relative;
+}
+/* 使用类选择器, 作用于所有小球 */
+.ball {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background-image: linear-gradient(pink, red);
+  position: absolute;
+}

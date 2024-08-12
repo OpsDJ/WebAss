@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>code-4.5</title>
+  <style>
+    :root {
+      --red: #B71C1C;   /* 深红 */
+    }
+    .content {
+      --red: #FF80AB;   /* 粉红 */
+      --blue: #50C2F7;  /* 浅蓝 */
+    }
+  </style>
+</head>
+<body>
+  <span style="color: var(--red);">深红</span>
+  <span style="color: var(--blue, blue);">蓝色</span>
+  <div class="content">
+    <span style="color: var(--red);">粉红</span>
+    <span style="color: var(--blue, blue);">浅蓝</span>
+  </div>
+</body>
+</html>

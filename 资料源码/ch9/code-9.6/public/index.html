@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9.6</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <script defer src="./index.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 注意表单的 method、enctype 属性 -->
+      <form action="/" method="post" enctype="multipart/form-data">
+        <p>姓名: <input type="text" name="userName" v-model="userName" /></p>
+        <p>头像: <input type="file" name="avatar" /></p>
+        <p>
+          <button type="submit">直接表单提交</button>
+          <button type="button" onclick="ajaxUpload()">AJAX方式提交</button>
+        </p>
+      </form>
+    </div>
+  </body>
+</html>

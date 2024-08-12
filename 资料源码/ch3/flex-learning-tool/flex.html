@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Learning Tool</title>
+    <link rel="stylesheet" href="flex.css">
+</head>
+<body>
+    <div id="app" >
+        <div class="container" 
+            v-bind:style="{ 
+                'width': container.width + 'px',
+                'height': container.height + 'px',
+                'overflow': container.overflow,
+                'flex-direction': container.flexDirection,
+                'flex-wrap': container.flexWrap,
+                'justify-content': container.justifyContent,
+                'align-items': container.alignItems,
+                'align-content': container.alignContent
+            }"
+        >
+            <div class="child" v-for="(child, index) in children" :key="child.id" 
+                v-tooltip="'width: ' + (child.width || '\'\'') + '<br/>height: ' + (child.height || '\'\'') + '<br/>flex-grow: ' + child.grow + '<br/>flex-shrink: ' + child.shrink + '<br/>flex-basis: ' + child.basis + '<br/>self-align: ' + (child.align || '\'\'')"
+                :style="{
+                    'background-color': child.color,
+                    'width': child.width,
+                    'height': child.height,
+                    'flex-grow': child.grow || '',
+                    'flex-shrink': child.shrink || '',
+                    'flex-basis': child.basis || '',
+                    'align-self': child.align || '',
+                }"
+                v-bind:class="{active: (selectChildren.indexOf(child) >= 0)}"
+                v-on:click="selectChild(child)">
+                {{child.id}}
+            </div>
+        </div>
+        <div class="container-settings">
+            <vue-slider style="position:absolute; top: 10px; right: 30px; width: 200px;" v-model="container.width" :min="100" :max="600" :tooltip="'always'" :tooltip-placement="'bottom'" v-tooltip.left="'Container width'" ></vue-slider>
+            <vue-slider style="position:absolute; top: 50px; right: 10px; height: 100px;" v-model="container.height" :min="100" :max="200" direction="ttb" :tooltip="'always'" v-tooltip.bottom="'Container height'"></vue-slider>
+            <div class="children-settings">
+                <div><vue-slider style="width: 100px;" v-model="childrenCount" :min="3" :max="30" :tooltip="'always'" :tooltip-placement="'bottom'" v-tooltip.left="'Child count'"></vue-slider></div>
+                <span class="btn width" 
+                    v-tooltip="'Child width: ' + childSizeOptions[childWidth]" 
+                    v-bind:class="{v0: childWidth==0, v1: childWidth==1, v2: childWidth==2}" 
+                    v-on:click="setChildSize('width')">
+                </span>
+                <span class="btn height" 
+                    v-tooltip="'Child height: ' + childSizeOptions[childHeight]" 
+                    v-bind:class="{v0: childHeight==0, v1: childHeight==1, v2: childHeight==2}" 
+                    v-on:click="setChildSize('height')">
+                </span>
+            </div>
+        </div>
+
+        <div class="settings">
+            <label class="title">Container</label>
+            <ul>
+                <li v-for="(flexProp, propName) in containerFlexProps">
+                    <label v-bind:class="{muted:flexProp.label==='overflow'}">{{flexProp.label}}</label>
+                    <span class="checker" v-for="opt in flexProp.options" 
+                        v-bind:class="{checked:(container[propName] === opt)}"
+                        v-on:click="toggleContainerProp(propName, opt)">
+                        {{opt}}
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="settings">
+            <label class="title">Children</label>
+            <ul>
+                <li>
+                    <label class="muted">Selection</label>
+                    <span class="checker" v-bind:class="{checked:(selectChildren.length === children.length)}" @click="selectChild('ALL')" v-tooltip="'全选'">All</span>
+                    <span class="checker" v-bind:class="{checked:(selectChildren.length === 0)}" @click="selectChild('NONE')" v-tooltip="'全不选'">None</span>
+                    <span class="checker" @click="selectChild('Invert')" v-tooltip="'反选'">Invert Selection</span>
+                </li>
+                <li v-for="(flexProp, propName) in childFlexProps">
+                    <label>{{flexProp.label}}</label>
+                    <span class="checker" v-for="opt in flexProp.options" 
+                        v-bind:class="{checked: childrenPropChecked(propName, opt)}"
+                        v-on:click="setChildProp(propName, opt)">
+                        {{opt}}
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vue-slider-component@latest/theme/default.css">
+<script src="https://cdn.jsdelivr.net/npm/vue-slider-component@latest/dist/vue-slider-component.umd.min.js"></script>
+
+
+<link rel="stylesheet" href="tooltip.css">
+<script src="https://unpkg.com/v-tooltip@2.0.3/dist/v-tooltip.min.js"></script>
+
+<script src="flex.js"></script>
+</html>

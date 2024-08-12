@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>12.2 - 长轮询</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.27.2/axios.min.js"></script>
+  </head>
+  <body>
+    <script>
+      async function startLongPoll() {
+        while (true) {
+          try {
+            const res = await axios.post('/long-poll')
+            // 处理服务端回应数据...
+            console.log(res.data)
+          } catch {
+            // 处理异常，但避免退出循环
+          }
+        }
+      }
+      startLongPoll()
+    </script>
+  </body>
+</html>

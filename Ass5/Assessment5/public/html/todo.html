@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="/assets/css/todo.css">
+
+</head>
+<body>
+    <div id="header-container"></div>
+    <div id="container">
+        <div id="sidebar">
+            <h2>Search Todos</h2>
+            <input type="text" id="searchInput" placeholder="Enter Todo ID">
+            <button onclick="searchTodo()" style="display: block; margin: 0 auto;">Search</button>
+        </div>
+        <div id="content">
+            <div id="todoList">
+                <h2>Todo List</h2>
+                <div id="todos"></div>
+            </div>
+            <div id="todoForm">
+                <h2>Add a Todo</h2>
+                <textarea id="todoText" placeholder="Your todo"></textarea>
+                <button onclick="addTodo()" style="display: block; margin: 0 auto;">Add Todo</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/todo.js"></script>
+  <script src="../../assets/js/footer.js"></script>
+</body>
+</html>

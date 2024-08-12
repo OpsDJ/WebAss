@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>code-9.2</title>
+  </head>
+  <body>
+    <!-- 查询字符串, 服务端使用 req.query 接收 -->
+    <a href="/greet?userName=Peter">Query String</a><br>
+    
+
+
+    <!-- 命名路由参数, 服务端使用 req.params 接收 -->
+    <a href="/greet/Johnny">Named Route Parameter</a>
+
+
+
+
+    <!-- post方式提交表单, 数据位于请求正文(body)中, 服务端使用 req.body 接收 -->
+    <form action="/greet" method="post">
+      Your Name: <input type="text" name="userName" style="width: 20em;" />
+      <button type="submit">Submit</button>
+    </form>
+
+  </body>
+</html>

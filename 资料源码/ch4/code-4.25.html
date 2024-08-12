@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>4.25</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+  <!-- 引入Bootstrap的JavaScript文件 -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <!-- 模态对话框触发按钮 -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dialog">
+    Launch Model Dialog
+  </button>
+
+  <!-- 模态对话框 -->
+  <div class="modal fade" id="dialog" data-bs-backdrop="static" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal Dialog</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a deserunt animi earum! Assumenda maxime repellendus ullam deleniti quod? Minima, sequi delectus accusamus earum vero hic ducimus quibusdam aut veniam?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

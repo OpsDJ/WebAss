@@ -1,0 +1,22 @@
+<view>
+    <view class="photo-list">
+        <block wx:if="{{ photos.length }}">
+            <view wx:for="{{ photos }}" wx:key="id" class="photo-card">
+                <image src="{{ item.src }}" mode="aspectFill"></image>
+                <view class="photo-desc">
+                    <text class="title">{{ item.title }}</text>
+                    <view class="sub-title">
+                        <text class="time">{{ item.date }}</text>
+                        <text class="location">{{ item.location }}</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <view wx:else class="empty-hint">
+            <text>点击 "+" 添加图片...</text>
+        </view>
+    </view>
+    <view class="bottom-bar">
+        <button class="btn-add" bindtap="addPhoto">+</button>
+    </view>
+</view>

@@ -1,0 +1,19 @@
+#card {
+  font-size: 14px;
+  margin: 50px;
+  padding: 0.5em 2em;
+  width: 400px;
+  background-color: #eee;
+  border: 1px solid rgba(198, 83, 140, 0.88);
+  border-radius: 0.5em;
+}
+#card h1 {
+  color: #c6538c;
+}
+#card p {
+  color: #666;
+  line-height: 1.5em;
+}
+#card p:hover {
+  color: #c6538c;
+}/*# sourceMappingURL=code-4.27.css.map */

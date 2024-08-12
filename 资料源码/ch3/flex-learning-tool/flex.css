@@ -1,0 +1,118 @@
+#app {
+    padding: 20px;
+}
+
+.container {
+    border: 2px solid #555;
+    display: flex;
+}
+
+.child {
+    min-width: 30px;
+    min-height: 30px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.6em;
+}
+.child.active {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.container-settings {
+    position: fixed;
+    top: 0; right: 0;
+    width: 250px; height: 150px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-bottom-left-radius: 5px;
+    box-shadow: -5px 5px 5px #ccc;
+}
+
+.children-settings {
+    position: relative;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 20px; top: 50px;
+    padding: 20px 80px 20px 15px; 
+}
+.children-settings .btn {
+    color: #cccccc;
+    cursor: pointer;
+}
+.children-settings .btn.width::after {
+    content: '↔'
+}
+.children-settings .btn.height::after {
+    content: '↕'
+}
+.children-settings .btn.v0 {
+    color: #bbb;
+}
+.children-settings .btn.v1 {
+    color: #00AAEF;
+}
+.children-settings .btn.v2 {
+    color: #E91E63;
+}
+
+.settings {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    list-style: none;
+    margin-top: 40px;
+    padding: 30px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.settings>label { 
+    position: absolute;
+    top: -13px; left: 10px;
+    background-color: #666;
+    border-radius: 5px;
+    color: white;
+    font-size: 0.8em;
+    text-align: center;
+    padding: 3px 10px;
+}
+.settings ul {
+    list-style: none;
+    margin:0; padding:0;
+}
+.settings li {
+    padding: 10px 0px;
+}
+.settings li label {
+    min-width: 150px;
+    min-width: 120px;
+    display: inline-block;
+    margin-right: 30px;
+}
+.settings li label.muted {
+    font-style: italic;
+    color: #bbb;
+}
+
+.checker {
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    padding: 5px 8px;
+    margin-right: 8px;
+    cursor: pointer;
+    font-size: 0.8em;
+    border: 1px solid #eee;
+    color: #555;
+}
+.checker:hover {
+    border: 1px solid #ddd;
+}
+.checker.checked {
+    background-color: #00AAEF;
+    border: 0px;
+    color: white;
+}

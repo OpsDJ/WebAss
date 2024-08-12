@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>code-4.13</title>
+  <style>
+    body { margin: 50px; }
+    .box {
+      width: 150px;
+      height: 150px;
+      display: inline-block;
+      margin: 20px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+    }
+    .box > div {
+      background-color: rgba(0, 220, 244, 0.6);
+      border: 1px solid #3cf;
+      border-radius: 5px;
+      box-sizing: border-box;
+      width: 150px;
+      height: 150px;
+      padding: 0.5em;
+      text-align: center;
+      transition: transform 2s;
+    }
+    .box > div:hover {
+      transform: initial !important;
+      transition: transform 2s;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div style="transform: translateX(15px);">translateX(15px)</div>
+  </div>
+  <div class="box">
+    <div style="transform: translateY(15px);">translateY(15px)</div>
+  </div>
+  <div class="box">
+    <div style="transform: translate(15px, 15px);">translate(15px, 15px)</div>
+  </div>
+  <div class="box">
+    <div style="transform: perspective(200px) translateZ(15px) ;">perspective(200px) translateZ(15px)</div>
+  </div>
+  <div class="box">
+    <div style="transform: perspective(200px) translate3d(15px, 15px, 15px);">perspective(200px) translate3d(15px, 15px, 15px)</div>
+  </div>
+</body>
+</html>

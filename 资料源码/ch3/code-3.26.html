@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>code-3.26</title>
+    <style>
+        #parent {
+            width: 220px; 
+            height: 120px;
+            border: 1px solid black;
+            position: relative;   /* 父元素非static定位 */
+        }
+        #child {
+            background-color: #ccc;
+            width: 70px;
+            height: 40px;
+            position: absolute;
+            left: 30px;
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="child">child</div>
+    </div>
+</body>
+</html>

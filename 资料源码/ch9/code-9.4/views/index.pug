@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+  head
+    title='9.4'
+    link(rel="stylesheet", href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css")
+  body
+    div(class="container p-3")
+      table(class="table table-striped")
+        thead
+          tr
+            th #
+            th Name
+            th Email
+        tbody
+          each val, index in customers
+            tr 
+              td= index + 1
+              td= val.name
+              td= val.email

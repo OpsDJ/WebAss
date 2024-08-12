@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>code-3.8</title>
+  <style>
+    [title] { color: red; } 				        /* 拥有title属性 */
+    [href="#section"] { color: green; }		/* 拥有href属性, 且href属性值为 "#section" */
+    [href*="code"] { color:orange; }		    /* 拥有href属性, 且href属性值中含有 "code" */
+    [href$="com"] { color: grey; } 		    /* 拥有href属性, 且href属性值以 "com" 结尾 */
+    [href^="https"] { color:greenyellow; }	/* 拥有href属性, 且href属性值以 "https" 开头 */
+  </style>
+</head>
+<body>
+    <a href="#" title="Go Top">Top</a>
+    <a href="#section">Section</a>
+    <a href="./code-1.1.html">code</a>
+    <a href="http://example.com">example.com</a>
+    <a href="https://example.org">example.org</a>    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>计算器</h1>
+        <input type="text" id="inputs" placeholder="输入表达式 (例如：3+2-4*5/2, 2,3)" style="width: 100%;"/>
+        <button onclick="calculateDynamic()">计算</button>
+        <div class="result" id="result"></div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+</html>

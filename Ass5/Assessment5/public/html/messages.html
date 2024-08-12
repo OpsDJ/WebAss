@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages</title>
+  <link rel="stylesheet" href="/assets/css/message.css">
+
+</head>
+
+<body>
+  <div id="header-container"></div>
+
+  <div id="container">
+    <div id="sidebar">
+      <h2>Search Message by ID</h2>
+      <div id="searchContainer">
+        <input type="text" id="searchInput" placeholder="Enter message ID">
+        <button class="center-button" onclick="searchMessage()">Search</button>
+      </div>
+    </div>
+    <div id="content">
+      <div id="messageList">
+        <h2>Messages</h2>
+        <div id="messages"></div>
+      </div>
+
+      <div id="messageForm">
+        <h2>Post a Message</h2>
+        <textarea id="messageText" placeholder="Your message"></textarea>
+        <button class="postButton" onclick="postMessage()" style="display: block; margin: 0 auto;">Post Message</button>
+      </div>
+    </div>
+  </div>
+  <script src="../../assets/js/message.js"></script>
+
+  <script src="../../assets/js/footer.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+body {
+  margin: 50px;
+  font-size: 14px;
+  font-weight: 200;
+   /* 定义高亮颜色变量 */
+  --highlight: #03A9F4;  
+}
+
+a {
+  text-decoration: none;
+  color: #555;
+}
+
+menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 主菜单 */
+menu.main {
+  display: flex;
+  position: relative;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 0 1em;
+}
+
+menu.main > li > a {
+  display: inline-block;
+  margin-right: 2em;
+  font-size: 1.1em;
+  padding: .5em 0;
+  /* 
+    事先为主菜单文字加下划线，但颜色透明（transparent）
+    当鼠标悬停时切换为高亮色
+  */
+  border-bottom: 2px solid transparent;   
+  transition: all .3s;
+}
+
+/* 鼠标悬停时切换主菜单项颜色及下划线颜色 */
+menu.main > li:hover > a {
+  color: var(--highlight);
+  border-bottom-color: var(--highlight);
+  transition: all .3s;
+}
+
+/* 子菜单面板 */
+menu.sub {
+  /* 子菜单面板应脱离文档流，以避免干扰主菜单布局（删除此行试一试）*/
+  position: absolute;     
+   /* 子菜单应置于顶层，以盖出网页其它内容 */
+  z-index: 999;          
+  min-width: 150px;
+  padding: 2px;
+  box-shadow: 3px 3px 6px #ccc;
+  background-color: white;
+  font-size: 0.9em;
+   /* 初始时子菜单面板完全透明 */ 
+  opacity: 0;                  
+  /* 事先将子菜单面板向下平移20px，子菜单弹出时还原，产生动态效果 */
+  transform: translateY(20px);  
+  /* 
+    子菜单面板并未消失（仅为透明），鼠标划过子菜单面板区域时会错误地弹出子菜单。
+    因此，使用如下样式阻止鼠标事件，待子菜单正常弹出后取消。
+    也可尝试将上一行换作 transform: rotateX(90deg) 或 rotateY(90deg)，
+    这样子菜单面板在初始时被“转平”，同样可避免错误地触发子菜单面板弹出。
+    鼠标悬停主菜单项时再转回0度，效果也不错
+  */
+  pointer-events: none;         
+  transition: all .3s;
+}
+
+/* 鼠标悬停主菜单项时显示子菜单 */
+menu.main > li:hover > menu.sub {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;    /* 子菜单显示时，重新监听鼠标事件 */
+  transition: all .3s;
+}
+
+menu.sub a {
+  display: block;
+  padding: 0.3em 1em;
+}
+
+/* 鼠标悬停子菜单项时的高亮效果 */
+menu.sub a:hover {
+  color: white;
+  background-color: var(--highlight);
+}
+
+/* 子菜单项之间的分隔条 */
+menu.sub > li.separator {
+  background-color: #eee;
+  height: 1px;
+  margin: 0.5em 2px;
+}

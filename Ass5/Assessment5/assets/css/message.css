@@ -1,0 +1,238 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    display: flex;
+}
+
+#sidebar {
+    width: 20%;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 居中对齐 */
+}
+
+#content {
+    width: 80%;
+    padding: 20px;
+}
+
+#status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+#statusCircle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    margin-right: 10px;
+}
+
+#status_username {
+    font-weight: bold;
+}
+
+#logoutContainer {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+textarea {
+    height: 200px;
+    /* 固定高度 */
+    resize: none;
+    /* 禁止调整大小 */
+}
+
+#messageForm,
+#messageList {
+    margin: 20px auto;
+    padding: 0px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#messageText {
+    width: 100%;
+    padding: 0px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.logout-button {
+    background-color: #dc3545;
+    margin-top: 10px;
+    width: auto;
+    height: auto;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+}
+
+#messages {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.message {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.message:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.message:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+#searchContainer {
+    width: 100%;
+    /* 使容器占据整个宽度 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 水平居中对齐 */
+}
+
+#searchInput {
+    width: 80%;
+    /* 调整宽度以更好地居中 */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.center-button {
+    width: auto;
+    /* 让按钮宽度自动适应内容 */
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+
+#navbar h1 {
+    margin: 0;
+}
+
+#navbar #statusIndicator {
+    display: flex;
+    align-items: center;
+}
+
+#navbar #statusIndicator span {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+#navbar button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#navbar button:hover {
+    background-color: #c82333;
+}
+
+#title h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: white;
+}
+
+#nav {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav li {
+    margin-right: 20px;
+}
+
+#nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+#nav a:hover {
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#nav a.active {
+    background-color: green;
+    border-radius: 5px;
+    font-weight: bold;
+}

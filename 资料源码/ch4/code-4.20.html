@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>4.20</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { display: flex; }
+    div  { background: brown; color: white; padding: 1em 2em; margin: 0.5em; }
+
+    /* 横屏样式 */
+    @media (orientation: landscape) {  
+      body {
+        flex-direction: row;
+      }
+    }
+
+    /* 竖屏样式 */
+    @media (orientation: portrait) {
+      body {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div>Box1</div>
+  <div>Box2</div>
+  <div>Box3</div>
+</body>
+</html>

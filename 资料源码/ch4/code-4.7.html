@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>code-4.7</title>
+    <style>
+      p {
+        width: 400px;
+      }
+      /* 访问段落首字母 */
+      p::first-letter {
+        font-size: 3em;
+      }
+      /* 访问段落首行 */
+      p::first-line {
+        font-weight: bold;
+      }
+      /* 生成源文档中原先不存在的内容，并引用之 */
+      .rmb::before {
+        content: '¥';
+      }
+      .rmb::after {
+        content: '元';
+      }
+      button {
+        position: relative;
+      }
+      /* 按钮右上角的红点 */
+      button::after {
+        content: '3';
+        display: inline-block;
+        width: 1.2em;
+        height: 1.2em;
+        line-height: 1.2em;
+        border-radius: 50%;
+        font-size: 12px;
+        text-align: center;
+        color: white;
+        background-color: red;
+        position: absolute;
+        right: -0.6em;
+        top: -0.6em;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Asperiores saepe facere quaerat quod delectus odio pariatur quidem maxime voluptatibus, cupiditate dolorum
+      provident harum.
+    </p>
+    <div class="rmb">
+      <input type="number" />
+    </div>
+    <br />
+    <button>Message</button>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>探索水下世界的魅力</title>
+  <style>
+    body {
+      text-align: center; 
+    }
+    .container {
+      max-width: 800px; 
+      margin: 0 auto;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>探索水下世界的魅力</h1>
+    <p>
+      潜水是一种充满刺激和奇幻的活动，让人们有机会亲近自然，体验地球上未被大众触及的一面。无论是初学者还是经验丰富的潜水员，这项活动都能带来难忘的体验和深刻的自我挑战。
+    </p>
+    <h2>潜水的好处</h2>
+    <p>潜水不仅是一种娱乐活动，它还为个人带来许多好处：</p>
+    <ul>
+      <li>心理健康：水下的宁静环境有助于减轻压力和焦虑。</li>
+      <li>身体健康：潜水是一种全身性运动，可以增强肌肉力量、改善心肺功能。</li>
+      <li>环境意识：接触海洋生态系统使潜水者更加关注环境保护。</li>
+    </ul>
+    <h2>基础装备介绍</h2>
+    <p>
+      每个潜水者都需要一些基本的装备才能进行潜水，下面是潜水必备的基础装备列表：
+    </p>
+    <ol>
+      <li>潜水面镜：提供清晰的视野，保护眼睛不受水的刺激。</li>
+      <li>呼吸管：在浅水区潜水时使用，可以辅助呼吸。</li>
+      <li>潜水服：保持体温，防止身体过冷或被水下物体划伤。</li>
+      <li>蛙鞋：增加游泳时的推进力。</li>
+      <li>氧气瓶：供深水潜水时使用，提供足够的呼吸氧气。</li>
+    </ol>
+    <h2>潜水训练课程</h2>
+    <p>潜水前必须接受专业的训练，以下是几种常见的潜水课程：</p>
+    <table border="1">
+      <tr>
+        <th>课程类型</th>
+        <th>描述</th>
+        <th>面向人群</th>
+      </tr>
+      <tr>
+        <td>初级潜水课程</td>
+        <td>学习基本的潜水技巧和安全知识</td>
+        <td>初学者</td>
+      </tr>
+      <tr>
+        <td>高级潜水课程</td>
+        <td>学习更复杂的潜水技能和技巧</td>
+        <td>有一定经验的潜水者</td>
+      </tr>
+      <tr>
+        <td>救援潜水课程</td>
+        <td>学习急救技能和应急响应</td>
+        <td>想要提升自我救援能力的潜水者</td>
+      </tr>
+      <tr>
+        <td>特殊环境潜水</td>
+        <td>专注于洞穴、沉船等特殊环境</td>
+        <td>寻求特殊挑战的高级潜水者</td>
+      </tr>
+    </table>
+    <h2>全球知名潜水胜地</h2>
+    <p>对于潜水爱好者来说，探索世界各地的潜水胜地是一种激动人心的经历。以下是一些全球知名的潜水地点：</p>
+    <ul>
+      <li>大堡礁（澳大利亚）：世界最大的珊瑚礁系统，拥有丰富的海洋生物。</li>
+      <video width="320" height="240" controls>
+        <source src="./澳大利亚·大堡礁_I_世上最大、最美,经历最多生死考验的珊瑚礁群.mp4" type="video/mp4" controls autoplay>
+      </video>
+      <li>蓝洞（伯利兹）：一个深邃的水下洞穴，对于喜爱洞穴潜水的潜水员来说是一个理想的地点。</li>
+      <li>西蒙达（埃及）：红海中的热门潜水地点，以其清澈的水和丰富的海洋生物著称。</li>
+    </ul>
+    <h2>结论</h2>
+    <p>潜水是一项能够提供无与伦比美丽景象和极致体验的活动。无论是为了探索未知的水下世界，还是为了寻找一种放松心情的方式，潜水都是一个绝佳的选择。记得在潜水前接受适当的训练和准备，确保安全和愉快的潜水经历。</p>
+    <h2>注册表单</h2>
+    <form action="/submit_registration" method="post">
+      <label for="email">邮箱：</label>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="username">用户名：</label>
+      <input type="text" id="username" name="username" required><br><br>
+
+      <label for="phone">手机：</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{11}" required><br><br>
+
+      <label for="password">密码：</label>
+      <input type="password" id="password" name="password" required><br><br>
+
+      <label>性别选择：</label>
+      <input type="radio" id="male" name="gender" value="male" checked>
+      <label for="male">男</label>
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">女</label><br><br>
+
+      <label for="skill">潜水能力选择：</label>
+      <select id="skill" name="skill">
+        <option value="beginner">初学者</option>
+        <option value="intermediate">中级潜水员</option>
+        <option value="advanced">高级潜水员</option>
+      </select><br><br>
+
+      <label for="destination">想去地点选择：</label>
+      <select id="destination" name="destination">
+        <option value="great_barrier_reef">大堡礁（澳大利亚）</option>
+        <option value="blue_hole">蓝洞（伯利兹）</option>
+        <option value="simon_dahab">西蒙达（埃及）</option>
+        <option value="other">其他</option>
+      </select><br><br>
+
+      <input type="submit" value="注册">
+    </form>
+  </div>
+</body>
+</html>
+

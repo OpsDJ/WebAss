@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>4.19</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    p { 
+      background-color: brown; color: white; padding: 1em 2em; 
+      /* 所有段落默认为透明度10% */
+      opacity: 0.1;
+    }
+    @media (max-width: 767px) {
+      .xs { opacity: 1; }
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .sm { opacity: 1; }
+    }
+    @media (min-width: 992px) and (max-width: 1199px){
+      .md { opacity: 1; }
+    }
+    @media (min-width: 1200px) {
+      .lg { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <p class="xs">超小屏幕(手机 ＜768px)</p>
+  <p class="sm">小屏幕(平板 ≥768px)</p>
+  <p class="md">中等屏幕(桌面显示器 ≥992px)</p>
+  <p class="lg">大屏幕(大桌面显示器 ≥1200px)</p>
+</body>
+</html>

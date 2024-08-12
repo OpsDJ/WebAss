@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>code-3.18</title>
+    <style>
+        p {
+            /* 默认时<p>元素不显示 */
+            display: none;
+            width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 1em 1.5em;
+            text-align: justify;
+        }
+        h1:hover ~ p {
+            /* 鼠标处于<h1>元素上方时其后<p>元素显示 */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Title</h1>
+    <p>
+        <!-- VSCode中输入"lorem + Tab"可生成如下随机文本 -->
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, totam. Laboriosam doloremque quo ad laborum delectus nesciunt omnis dignissimos molestiae inventore aperiam explicabo non sint, possimus nulla sequi illo dolore!
+    </p>
+</body>
+</html>

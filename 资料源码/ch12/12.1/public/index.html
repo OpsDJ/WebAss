@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>12.1 - 轮询</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.27.2/axios.min.js"></script>
+  </head>
+  <body>
+    <script>
+      // 轮询周期1秒
+      const interval = 1000
+      setInterval(async () => {
+        // 发送轮询请求
+        const res = await axios.post('/poll')
+        // 处理回应数据...
+        console.log(res.data)
+      }, interval)
+    </script>
+  </body>
+</html>

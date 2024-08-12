@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>5.3</title>
+    <script>
+        debugger
+        // 定义函数getGreeting用于返回一句问候
+        // 函数入口参数name用于接收"姓名"（原料）
+        function getGreeting(name) {					// {}中的内容为函数体
+          debugger
+          const hours = new Date().getHours()	// 从当前系统时间中取得小时（几点）
+          let greeting												// 变量greeting用于暂存问候语
+
+          // 根据当前时间, 准备问候语, 暂存于变量greeting
+          if (hours < 12) {
+            greeting = 'Good morning'
+          } else if (hours < 18) {
+            greeting = 'Good afternoon'
+          } else {
+            greeting = 'Good evening'
+          }
+
+          // 将问候语拼接上函数的输入参数(姓名)
+          // 并返回处理结果（产品）
+          return `${greeting}, ${name}`				
+        }
+
+        debugger
+        // 调用函数getGreeting, 传入原料（Johnny）
+        // 并接收函数返回的结果存放常量greeting
+        const greeting = getGreeting('Johnny')
+				
+        debugger
+        console.log(greeting)			// 控制台输出得到的问候语
+    </script>
+</head>
+<body>
+</body>
+</html>

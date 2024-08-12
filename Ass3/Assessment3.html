@@ -1,0 +1,326 @@
+<!--
+  assessment3:
+  基于 Assessment1，参考课本关于月亮的网址，进行修饰
+  可以不完全一样
+  1、7分  - 逆序数字
+          编写一个函数，接受一个整数，返回其逆序的整数。例如，输入 123 应返回 321，输入 -456 应返回 -654。   
+  2、8分  - 参考 code-5.1-6，构建一个最简单的 4则运算器，不固定 运算符号，有结束按钮。
+  3、5分  - 参考 code-5.3 对于 Date() 的使用
+          使用 prompt() 获取一个时间，需要有 年、月、日，告知这个时间和现在差距多少天
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>探索水下世界的魅力</title>
+    <link rel="stylesheet" href="./sty.css" />
+
+    <script>
+      // 编写一个函数，接受一个整数，返回其逆序的整数。例如，输入 123 应返回 321，输入 -456 应返回 -654。
+      function reverseInteger(n) {
+        // 将整数转换为字符串
+        let strN = n.toString();
+
+        // 检查数字是否为负数
+        if (strN[0] === "-") {
+          // 排除负号，将其余部分逆序，并在结果前加上负号
+          let reversedStrN = "-" + strN.slice(1).split("").reverse().join("");
+          return parseInt(reversedStrN, 10);
+        } else {
+          // 将字符串逆序
+          let reversedStrN = strN.split("").reverse().join("");
+          return parseInt(reversedStrN, 10);
+        }
+      }
+
+      // 测试
+      console.log(reverseInteger(123)); // 输出: 321
+      console.log(reverseInteger(-456)); // 输出: -654
+      console.log(reverseInteger(1200)); // 输出: 21
+      console.log(reverseInteger(0)); // 输出: 0
+
+      number = prompt("输入需要逆序的整数：");
+
+      alert(
+        "输入的数值为：" + number + "逆序的数值为" + reverseInteger(number)
+      );
+    </script>
+
+    <script>
+      // 构建一个最简单的 4则运算器，不固定 运算符号，有结束按钮。
+      function startCalculator() {
+        while (true) {
+          let expression = prompt("请输入计算表达式，或者输入'结束'退出计算：");
+
+          if (expression === null || expression.toLowerCase() === "结束") {
+            alert("计算结束");
+            break;
+          }
+
+          try {
+            let result = eval(expression); // 使用 eval 函数计算表达式结果
+            alert("计算结果：" + result);
+          } catch (error) {
+            alert("输入的表达式有误，请重试。");
+          }
+        }
+      }
+
+      // 开始计算器
+      startCalculator();
+    </script>
+
+    <script>
+      // 使用prompt弹窗让用户输入一个日期
+      let userInput = prompt("请输入日期（格式：YYYY-MM-DD）：");
+      let inp_date;
+
+      if (userInput) {
+        inp_date = new Date(userInput);
+
+        // 检查转换后的Date对象是否有效（通过isNaN检查，无效日期会返回true）
+        if (isNaN(inp_date)) {
+          console.error("输入的日期格式不正确，请按照 YYYY-MM-DD 格式输入！");
+          alert("输入的日期格式不正确，请按照 YYYY-MM-DD 格式输入！");
+        } else {
+          // 获取当前日期
+          let currentDate = new Date();
+
+          // 计算两个日期之间的时间差（以毫秒为单位）
+          let timeDifference = currentDate - inp_date;
+
+          // 将时间差转换为天数
+          let dayDifference = Math.floor(
+            timeDifference / (1000 * 60 * 60 * 24)
+          );
+
+          alert(`输入的日期距今已经 ${dayDifference} 天了`);
+        }
+      } else {
+        console.log("用户未输入日期。");
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="header">
+      <!--大标题独立  -->
+      <div id="title">
+        <h1>探索水下世界的魅力</h1>
+      </div>
+      <ul id="nav">
+        <li><a href="#" class="active">主页</a></li>
+        <!-- 增加导航栏 -->
+        <li><a href="#">文章</a></li>
+        <li><a href="#">博客</a></li>
+        <li><a href="#">照片</a></li>
+        <li><a href="#">关于</a></li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="main-content">
+        <p>
+          潜水是一种充满刺激和奇幻的活动，让人们有机会亲近自然，体验地球上未被大众触及的一面。无论是初学者还是经验丰富的潜水员，这项活动都能带来难忘的体验和深刻的自我挑战。
+        </p>
+        <h2>潜水的好处</h2>
+        <p>潜水不仅是一种娱乐活动，它还为个人带来许多好处：</p>
+        <ul>
+          <li>心理健康：水下的宁静环境有助于减轻压力和焦虑。</li>
+          <li>
+            身体健康：潜水是一种全身性运动，可以增强肌肉力量、改善心肺功能。
+          </li>
+          <li>环境意识：接触海洋生态系统使潜水者更加关注环境保护。</li>
+        </ul>
+        <h2>基础装备介绍</h2>
+        <p>
+          每个潜水者都需要一些基本的装备才能进行潜水，下面是潜水必备的基础装备列表：
+        </p>
+        <ol>
+          <li>潜水面镜：提供清晰的视野，保护眼睛不受水的刺激。</li>
+          <li>呼吸管：在浅水区潜水时使用，可以辅助呼吸。</li>
+          <li>潜水服：保持体温，防止身体过冷或被水下物体划伤。</li>
+          <li>蛙鞋：增加游泳时的推进力。</li>
+          <li>氧气瓶：供深水潜水时使用，提供足够的呼吸氧气。</li>
+        </ol>
+        <h2>潜水训练课程</h2>
+        <p>潜水前必须接受专业的训练，以下是几种常见的潜水课程：</p>
+        <table>
+          <tr>
+            <th>课程类型</th>
+            <th>描述</th>
+            <th>面向人群</th>
+          </tr>
+          <tr>
+            <td>初级潜水课程</td>
+            <td>学习基本的潜水技巧和安全知识</td>
+            <td>初学者</td>
+          </tr>
+          <tr>
+            <td>高级潜水课程</td>
+            <td>学习更复杂的潜水技能和技巧</td>
+            <td>有一定经验的潜水者</td>
+          </tr>
+          <tr>
+            <td>救援潜水课程</td>
+            <td>学习急救技能和应急响应</td>
+            <td>想要提升自我救援能力的潜水者</td>
+          </tr>
+          <tr>
+            <td>特殊环境潜水</td>
+            <td>专注于洞穴、沉船等特殊环境</td>
+            <td>寻求特殊挑战的高级潜水者</td>
+          </tr>
+        </table>
+        <h2>全球知名潜水胜地</h2>
+        <p>
+          对于潜水爱好者来说，探索世界各地的潜水胜地是一种激动人心的经历。以下是一些全球知名的潜水地点：
+        </p>
+        <ul>
+          <li>
+            大堡礁（澳大利亚）：世界最大的珊瑚礁系统，拥有丰富的海洋生物。
+          </li>
+          <video width="320" height="240" controls autoplay>
+            <source
+              src="./澳大利亚·大堡礁_I_世上最大、最美,经历最多生死考验的珊瑚礁群.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+          <li>
+            蓝洞（伯利兹）：一个深邃的水下洞穴，对于喜爱洞穴潜水的潜水员来说是一个理想的地点。
+          </li>
+          <li>
+            西蒙达（埃及）：红海中的热门潜水地点，以其清澈的水和丰富的海洋生物著称。
+          </li>
+        </ul>
+        <h2>结论</h2>
+        <p>
+          潜水是一项能够提供无与伦比美丽景象和极致体验的活动。无论是为了探索未知的水下世界，还是为了寻找一种放松心情的方式，潜水都是一个绝佳的选择。记得在潜水前接受适当的训练和准备，确保安全和愉快的潜水经历。
+        </p>
+      </div>
+      <!-- 增加侧边栏 -->
+      <div id="sidebar" style="color: black">
+        <div class="widget">
+          <div class="form-switch">
+            <input type="checkbox" id="switch" name="my-input" />
+            <label class="register" for="switch">注册</label>
+            <div class="form-content">
+              <h2>注册表单</h2>
+              <form action="/submit_registration" method="post">
+                <label for="email">邮箱</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                /><br /><br />
+
+                <label for="username">用户名</label>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  required
+                /><br /><br />
+
+                <label for="phone">手机</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  pattern="[0-9]{11}"
+                  required
+                /><br /><br />
+
+                <label for="password">密码</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  required
+                /><br /><br />
+
+                <label>性别选择</label>
+                <input
+                  type="radio"
+                  id="male"
+                  name="gender"
+                  value="male"
+                  checked
+                />
+                <label for="male">男</label>
+                <input type="radio" id="female" name="gender" value="female" />
+                <label for="female">女</label><br /><br />
+
+                <label for="skill">潜水能力选择</label>
+                <select id="skill" name="skill">
+                  <option value="beginner">初学者</option>
+                  <option value="intermediate">中级潜水员</option>
+                  <option value="advanced">高级潜水员</option></select
+                ><br /><br />
+
+                <label for="destination">想去地点选择</label>
+                <select id="destination" name="destination">
+                  <option value="great_barrier_reef">大堡礁（澳大利亚）</option>
+                  <option value="blue_hole">蓝洞（伯利兹）</option>
+                  <option value="simon_dahab">西蒙达（埃及）</option>
+                  <option value="other">其他</option></select
+                ><br /><br />
+
+                <button type="submit" class="register-submit">注册</button>
+              </form>
+            </div>
+          </div>
+          <div class="form-switch">
+            <input type="checkbox" id="login-switch" name="my-input" />
+            <label for="login-switch" class="login_">登录</label>
+            <div class="form-content login">
+              <h2>登录表单</h2>
+              <form
+                action="/submit_login"
+                method="post"
+                style="margin: 20px 0; color: black"
+              >
+                <label for="login_username">用户名</label>
+                <input
+                  type="text"
+                  id="login_username"
+                  name="login_username"
+                  required
+                /><br /><br />
+
+                <label for="login_password">密码</label>
+                <input
+                  type="password"
+                  id="login_password"
+                  name="login_password"
+                  required
+                /><br /><br />
+
+                <input type="submit" value="登录" />
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- 增加搜索栏 -->
+        <div class="widget">
+          <h3 style="color: white">搜索</h3>
+          <form action="https://www.baidu.com/s?" method="get">
+            <input type="text" name="wd" placeholder="输入关键词..." />
+            <button type="submit">搜索</button>
+          </form>
+        </div>
+        <div class="widget">
+          <h3 style="color: white">相关链接</h3>
+          <ul>
+            <li><a href="#" style="color: white">水下摄影技巧</a></li>
+            <li><a href="#" style="color: white">海洋生物保护</a></li>
+            <li><a href="#" style="color: white">潜水旅行指南</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<view>
+    <image style="width: 100%;" mode="aspectFill" src="{{src}}"></image>
+    <view class="desc">
+        <input class="item" type="text" model:value="{{title}}" placeholder="图片标题" placeholder-style="color:#90A4AE" />
+        <text class="item" bindtap="chooseLocation">{{ location || '拍摄地点'}}</text>
+        <!-- 日期选择器 -->
+        <picker class="item" mode="date" value="{{date}}" bindchange="dateChange">
+            <view>{{date || '拍摄日期'}}</view>
+        </picker>
+    </view>
+    <button type="primary" bindtap="save">确定</button>
+</view>

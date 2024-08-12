@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>code-2.1</title>
+  </head>
+  <body>
+    <h1>HTML</h1>
+    <a href="#bottom">转至页末</a>
+    <p>
+      HTML是用于描述Web文档<em>结构和语义</em>的语言，
+      <strong>Tags</strong>用于定义元素。
+    </p>
+    <ul>
+      <li>&lt;em&gt;元素: 标记出需要用户着重阅读的内容</li>
+      <li>&lt;strong&gt;元素: 表示文本十分重要</li>
+    </ul>
+    <!-- 表格默认无边框，此处使用border属性指定边框宽度为1像素。
+        但应注意table元素的border属性已被废  弃，应避免使用! 应使用CSS定义表格及单元格边框。-->
+    <table border="1">
+      <thead>
+        <tr>
+          <th colspan="2">音频和视频元素</th>
+        </tr>
+        <tr>
+          <th>元素</th>
+          <th>描述</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>audio</td>
+          <td>用于在文档中嵌入音频内容</td>
+        </tr>
+        <tr>
+          <td>video</td>
+          <td>用于支持在文档内进行视频播放</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      更多HTML元素的介绍可参阅
+      <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element">
+        <img src="https://developer.mozilla.org/favicon-48x48.cbbd161b.png" />
+      </a>
+    </p>
+    <!-- 此处使用样式表创建一个与视窗同高的div元素，以便演示锚元素的页面内跳转效果 -->
+    <div style="height: 100vh"></div>
+    <a id="bottom" href="#">转至页首</a>
+  </body>
+</html>

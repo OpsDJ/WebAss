@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Timer</title>
+    <!-- 引入 vue.js -->
+    <script src="./vender/vue.3.2.33.js"></script>
+    <!-- 引入 Lodash 库, 详见 index.js 注释 -->
+    <script src="./vender/lodash.4.17.21.js"></script>
+    <script defer src="./index.js"></script>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <div id="app">
+      <div id="container" :class="running ? 'running': 'pause'">
+        <!-- 在小时数值上方滚动鼠标滚轮时每次增减 3600 秒（1小时）-->
+        <div class="card" @mousewheel="onMousewheel($event, 3600)">{{ hours }}</div>
+        <span class="point">:</span>
+        <!-- 在分钟数值上方滚动鼠标滚轮时每次增减 60 秒（1分钟）-->
+        <div class="card" @mousewheel="onMousewheel($event, 60)">{{ minutes }}</div>
+        <span class="point">:</span>
+        <div class="card" @mousewheel="onMousewheel($event, 1)">{{ seconds }}</div>
+      </div>
+    </div>
+  </body>
+</html>

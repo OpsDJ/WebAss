@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>8.1</title>
+    <!-- 引入 Vue.js-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.33/vue.global.min.js"></script>
+    <script defer src="code-8.1.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input type="number" v-model="a" />
+      +
+      <input type="number" v-model="b" />
+      <button @click="sum()">=</button>
+      {{ s }}
+    </div>
+  </body>
+</html>

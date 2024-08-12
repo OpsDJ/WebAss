@@ -1,0 +1,268 @@
+body {
+    text-align: center; /* 设置整体居中对齐 */
+    font-family: Arial, sans-serif; /* 使用 Arial 字体 */
+    background: #000 url('./img1.jpg') no-repeat; /* 设置背景颜色和背景图片 */
+    background-size: cover; /* 背景图片铺满整个页面 */
+    margin: 0; /* 去除页面默认边距 */
+    color: white; /* 设置文字颜色为白色 */
+    padding: 0; /* 去除页面默认内边距 */
+}
+
+.container {
+    max-width: 1500px; /* 设置容器最大宽度 */
+    margin: 0 auto; /* 左右居中显示 */
+    display: flex; /* 使用弹性盒子布局 */
+    text-align: left; /* 内容左对齐 */
+    background-color: rgba(0, 0, 0, 0.7); /* 添加背景颜色以提高可读性 */
+    padding: 20px; /* 内边距 */
+    border-radius: 10px; /* 设置圆角边框 */
+    justify-content: space-between; /* 在容器内部水平对齐元素 */
+}
+
+.main-content {
+    flex: 1; /* 主要内容占据剩余空间 */
+    margin-right: 20px; /* 右边距 */
+}
+
+#header {
+    display: flex; /* 使用弹性盒子布局 */
+    justify-content: space-between; /* 在头部内部水平对齐元素 */
+    align-items: flex-end; /* 在头部内部底部对齐元素 */
+    color: white; /* 设置文字颜色为白色 */
+    background-color: rgba(0, 0, 0, 0.7); /* 添加背景颜色以提高可读性 */
+    padding: 20px; /* 内边距 */
+}
+
+#title h1 {
+    font-size: 2.5em; /* 设置标题字体大小 */
+    margin: 0; /* 去除默认外边距 */
+    color: white; /* 设置文字颜色为白色 */
+}
+
+#nav {
+    display: flex; /* 使用弹性盒子布局 */
+    list-style-type: none; /* 去除列表样式 */
+    padding: 0; /* 去除默认内边距 */
+    margin: 0; /* 去除默认外边距 */
+}
+
+#nav li {
+    margin-right: 20px; /* 设置列表项右边距 */
+}
+
+#nav a {
+    color: white; /* 设置链接文字颜色为白色 */
+    text-decoration: none; /* 去除链接下划线 */
+    padding: 10px 15px; /* 设置链接内边距 */
+}
+
+#nav a.active, #nav a:hover {
+    background-color: rgb(103, 9, 209); /* 设置激活或鼠标悬停链接背景颜色 */
+    border-radius: 5px; /* 设置圆角 */
+    font-weight: bold; /* 设置粗体字体 */
+}
+
+h2 {
+    margin-top: 30px; /* 设置标题顶部外边距 */
+}
+
+p, ul, ol, form {
+    margin: 20px 0; /* 设置段落、无序列表、有序列表和表单的外边距 */
+}
+
+table {
+    width: 60%; /* 表格宽度父容器 */
+    border-collapse: collapse; /* 合并表格边框 */
+    color: white; /* 设置表格文字颜色为白色 */
+}
+
+table, th, td {
+    border: 1px solid white; /* 设置表格边框为白色 */
+    margin: 20px 0; /* 设置表格外边距 */
+}
+
+#sidebar {
+    width: 250px; /* 设置侧边栏宽度 */
+    padding: 10px; /* 内边距 */
+}
+
+.widget {
+    margin-bottom: 20px; /* 设置小部件底部外边距 */
+}
+
+.widget ul {
+    list-style-type: none; /* 去除小部件列表样式 */
+    padding: 0; /* 去除默认内边距 */
+    margin: 0; /* 去除默认外边距 */
+}
+
+.widget ul li {
+    margin-bottom: 5px; /* 设置小部件列表项底部外边距 */
+}
+
+.form-switch input[type="checkbox"] {
+    display: none; /* 隐藏复选框 */
+}
+
+.form-switch label {
+    cursor: pointer; /* 设置光标样式为指针 */
+    display: block; /* 块级显示 */
+    padding: 10px; /* 内边距 */
+    text-align: center; /* 文本居中对齐 */
+    margin-bottom: 10px; /* 底部外边距 */
+    border: 1px solid; /* 设置边框 */
+}
+
+
+.form-switch input[type="checkbox"]:checked~.form-content {
+    display: block; /* 当复选框选中时显示表单内容 */
+}
+.form-content {
+    display: none; /* 默认隐藏表单内容 */
+    padding: 10px; /* 内边距 */
+    border: 1px solid #ccc; /* 设置边框 */
+}
+
+
+
+
+label {
+    border-radius: 5px; /* 设置圆角 */
+    color: white;
+    background-color: blue;
+}
+
+
+
+
+#sidebar > ul {
+    margin-top: 3em; /* 设置顶部外边距 */
+}
+
+#sidebar h2 {
+    color: #B23C1C; /* 设置标题颜色 */
+    font-weight: 200; /* 设置字体粗细 */
+    font-size: 1.4em; /* 设置字体大小 */
+}
+
+#sidebar p {
+    font-size: .8em; /* 设置字体大小 */
+    line-height: 1.6em; /* 设置行高 */
+}
+
+#sidebar li li {
+    border-bottom: 1px solid #111; /* 设置列表项底部边框 */
+    padding: 12px; /* 内边距 */
+}
+
+#sidebar a {
+    color: #555; /* 设置链接文字颜色 */
+    font-size: .8em; /* 设置字体大小 */
+}
+
+#sidebar a:hover {
+    color: #B23C1C; /* 设置鼠标悬停链接颜色 */
+    text-decoration: underline; /* 添加下划线 */
+}
+
+/* 调整输入框和表单样式 */
+form input[type="email"],
+form input[type="text"],
+form input[type="tel"],
+form input[type="password"],
+form select,
+form textarea {
+    width: 100%; /* 宽度占满父容器 */
+    padding: 10px; /* 内边距 */
+    margin-bottom: 10px; /* 底部外边距 */
+    border: 1px solid #ccc; /* 设置边框 */
+    border-radius: 5px; /* 设置圆角 */
+    box-sizing: border-box; /* 设置盒模型为边框盒 */
+    color: #333; /* 设置文本颜色为黑色 */
+}
+
+form input[type="email"]:focus,
+form input[type="text"]:focus,
+form input[type="tel"]:focus,
+form input[type="password"]:focus,
+form select:focus,
+form textarea:focus {
+    outline: none; /* 去除默认焦点样式 */
+    border-color: #555; /* 设置焦点时的边框颜色 */
+}
+
+/* 调整表单开关样式 */
+.form-switch label {
+    cursor: pointer; /* 设置光标样式为指针 */
+    display: block; /* 块级显示 */
+    padding: 10px; /* 内边距 */
+    text-align: center; /* 文本居中对齐 */
+    margin-bottom: 10px; /* 底部外边距 */
+    border: 1px solid #ccc; /* 设置边框 */
+    background-color: #f0f0f0; /* 设置开关的背景色 */
+}
+
+.form-content {
+    border-radius: 5px;
+    padding: 10px; /* 内边距 */
+    border: 1px solid #ccc; /* 设置边框 */
+    background-color: #fff; /* 设置表单内容的背景色 */
+}
+
+/* 调整登录按钮样式 */
+.login input[type="submit"] {
+    background-color: #333; /* 设置背景颜色 */
+    color: #fff; /* 设置文字颜色 */
+    border: none; /* 去除边框 */
+    padding: 10px 20px; /* 设置内边距 */
+    cursor: pointer; /* 设置光标样式为指针 */
+    border-radius: 5px; /* 设置圆角 */
+    
+}
+
+.login {
+    margin-top: 20px; /* 设置顶部外边距 */
+    text-align: center; /* 居中对齐按钮 */
+}
+
+.login input[type="submit"]:hover {
+    background-color: #555; /* 设置鼠标悬停时的背景颜色 */
+}
+
+.form-switch {
+    text-align: center; /* 居中对齐 */
+    margin-top: 20px; /* 设置顶部外边距 */
+}
+
+.register-submit {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button {
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+
+
+}
+
+.register-submit:hover {
+    background-color: #555;
+}
+
+.register:hover{
+    box-shadow: 0 0 10px white; /* 鼠标悬停时的阴影效果 */
+}
+
+label {
+    color: black;
+}
+
+.login_:hover{
+    box-shadow: 0 0 10px white; /* 鼠标悬停时的阴影效果 */
+}
