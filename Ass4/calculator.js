@@ -61,5 +61,9 @@ function calculateDynamic() {
               default:
                   throw new Error('未知的运算符');
           }
-
-  
+        }
+  }catch(e){
+      console.log(e.message);
+  }
+  return result;
+}
