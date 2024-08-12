@@ -130,7 +130,7 @@ Assessment5
       const birthdate = document.getElementById('regBirthday').value;
       const bio = document.getElementById('regBio').value;
       // 发送注册请求
-      fetch(`${apiUrl}/register`, {
+      fetch(`${apiUrl}/users/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
