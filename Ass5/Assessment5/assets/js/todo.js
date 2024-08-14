@@ -1,8 +1,7 @@
 /**
  * 定义API的URL基础路径。
  */
-const apiUrl = "http://129.204.76.75:9000";
-
+const apiUrl = "https://pigfun.online";
 /**
  * 检查用户登录状态。
  * 根据localStorage中是否存在username和userID来确定用户是否已登录。
